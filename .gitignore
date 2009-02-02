@@ -4,7 +4,6 @@
 .*.swp
 ._*
 README.html
-local_settings.py
-django_flatblocks.egg-info
+django_snippets.egg-info
 dist
 build
