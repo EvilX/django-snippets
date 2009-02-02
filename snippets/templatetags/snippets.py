@@ -1,5 +1,6 @@
 """
 This module offers one templatetag called ``get_snippet``.
+
 ``get_snippet`` acts like an ``{% include %}``, that loads a template
 and renders it with the current context, but the template content
 comes from database.
@@ -20,14 +21,18 @@ It accepts 2 parameter:
 
         This field is option and defaults to no caching.
 
-Example::
+Syntax::
+
+    {% get_snippet [name] ([cache]) %}
+
+Example usage::
 
     {% load snippets %}
 
     ...
 
-    {% get_snippet 'comment_list' %}
-    {% get_snippet name_in_variable %}
+    {% get_snippet "comment_list" %}
+    {% get_snippet name_in_variable 3600 %}
 
 """
 
