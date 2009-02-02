@@ -1,46 +1,43 @@
-django-flatblocks
-=================
+django-snippets
+===============
 
-django-flatblocks is a simple application for handling small text-blocks on
-websites. Think about it like ``django.contrib.flatpages`` just not for a 
-whole page but for only parts of it, like an information text describing what
-you can do on a site.
+django-snippets acts like an {% include %}, that loads a template and
+renders it with the current context, but is editable and served
+dynamically from database.
 
 Usage
-------------
+-----
 
-Once you've created some instances of the ``flatblocks.models.FlatBlock``
-model, you can load it it using the ``flatblock_tags`` templatetag-library::
+Once you've created some instances of the ``snippets.models.Snippet``
+model, you can load it it using the ``snippets_tags`` templatetag-library::
     
-    {% load flatblock_tags %}
+    {% load snippets_tags %}
+    {% load comments %}
     
-    <html>
-        <head>
-            <!-- ... -->
-        </head>
-        <body>
-            <div id="page">
-                <div id="main">
-                    <!-- ... -->
-                </div>
-                <div id="sidebar">
-                    {% flatblock "page.info" %}
-                </div>
-            </div>
-        </body>
-    </html>
+    <!-- ... -->
 
-This way you can display a text block with the name 'page.info'. If you 
-have the name of a block in a template variable, leave out the quotes.
+    <h1>{{ entry.title }}</h1>
+
+    {{ entry.body }}
+
+    {% get_comment_list for entry as comment_list  %}	
+    {% if comment_list %}
+      <h2>Comments</h2>
+      {% get_snippet "comment_list" %}
+    {% endif %}
+
+    <!-- ... -->
+
+This way you can include a snippet with the name "comment_list". If you 
+have the name of a snippet in a template variable, leave out the quotes.
 
 This tag also accepts an optional argument where you can specify the number
-of seconds, the that block should be cached::
+of seconds, the that snippet should be cached::
     
-    {% flatblock "page.info" 3600 %}
-
+    {% get_snippet "comment_list" 3600 %}
 
 History
-------------
+-------
 
 Since this application targets use-cases that are basically applicable to 
 most web-projects out there, there are tons of solutions similar to this one.
