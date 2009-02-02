@@ -14,24 +14,17 @@ Usage
 -----
 
 Once you've created some instances of the ``snippets.models.Snippet``
-model, you can load it it using the ``snippets_tags`` templatetag-library::
+model, you can load it it using the ``snippets`` templatetag-library::
     
-    {% load snippets_tags %}
-    {% load comments %}
+    {% load snippets ... %}
     
-    <!-- ... -->
-
-    <h1>{{ entry.title }}</h1>
-
-    {{ entry.body }}
+    ...
 
     {% get_comment_list for entry as comment_list  %}	
     {% if comment_list %}
       <h2>Comments</h2>
-      {% get_snippet "comment_list" %}
+      <ol>{% get_snippet "comment_list" %}</ol>
     {% endif %}
-
-    <!-- ... -->
 
 This way you can include a snippet with the name "comment_list". If you 
 have the name of a snippet in a template variable, leave out the quotes.
