@@ -1,18 +1,18 @@
 from setuptools import setup, find_packages
-from flatblocks import get_version
+from snippets import get_version
 
 setup(
-    name = 'django-flatblocks',
+    name = 'django-snippets',
     version = get_version(),
-    description = 'django-flatblocks acts like django.contrib.flatpages but '
-                  'for parts of a page; like an editable help box you want '
-                  'show alongside the main content.',
+    description = 'django-snippets acts like an {% include %}, that loads a '
+                  'template and renders it with the current context, but is '
+                  'editable and served dynamically from database.',
     long_description = open('README.rst').read(),
     keywords = 'django apps',
     license = 'New BSD License',
-    author = 'Horst Gutmann',
-    author_email = 'zerok@zerokspot.com',
-    url = 'http://github.com/zerok/django-flatblocks/',
+    author = 'Guilherme Gondim',
+    author_email = 'semente@taurinus.org',
+    url = 'http://github.com/semente/django-snippets/',
     dependency_links = [],
     classifiers = [
         'Development Status :: 3 - Alpha',
@@ -27,4 +27,3 @@ setup(
     include_package_data = True,
     zip_safe = False,
 )
-
