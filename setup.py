@@ -7,10 +7,14 @@ from snippets import get_version
 setup(
     name = 'django-snippets',
     version = get_version(),
-    description = 'django-snippets provides a templatetag acting as an '
+    description = 'provides a templatetag for Django acting as an '
                   '{% include %}, but the template content comes from '
                   'database.',
-    long_description = open('README.rst').read(),
+    long_description = 'django-snippets provides a templatetag called '
+                       'get_snippet for Django projects.\n\n'
+                       'get_snippet acts as an {% include %}, that loads a '
+                       'template and renders it with the current context, '
+                       'but the template content comes from database.',
     keywords = 'django apps template',
     license = 'New BSD License',
     author = 'Guilherme Gondim',
