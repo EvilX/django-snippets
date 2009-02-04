@@ -56,16 +56,16 @@ class SnippetNode(template.Node):
             real_slug = template.Variable(self.slug).resolve(context)
         else:
             real_slug = self.slug
-        try:
             cache_key = CACHE_PREFIX + real_slug
             snippet = cache.get(cache_key)
             if snippet is None:
-                snippet = Snippet.objects.get(slug=real_slug)
+                try:
+                    snippet = Snippet.objects.get(slug=real_slug)
+                except Snippet.DoesNotExit:
+                    return ''
                 cache.set(cache_key, snippet, int(self.cache_time))
             t = template.Template(snippet.content)
             return t.render(context)
-        except Snippet.DoesNotExist:
-            return ''
 
 class BasicSnippetWrapper(object):
     def prepare(self, parser, token):
