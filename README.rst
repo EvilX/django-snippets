@@ -1,9 +1,9 @@
 django-snippets
 ===============
 
-**django-snippets** acts like an ``{% include %}``, that loads a template
-and renders it with the current context, but the template content comes
-from database.
+**django-snippets** provides a templatetag acting as an ``{% include %}``,
+that loads a template and renders it with the current context, but the
+template content comes from database.
 
 *django-snippets* is a fork of `django-flatblocks`_, and the main difference
 is that *django-snippets* render the content as a Django template.
