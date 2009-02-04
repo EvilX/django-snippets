@@ -1,7 +1,7 @@
 """
-This module offers one templatetag called ``get_snippet``.
+This module offers one templatetag called ``include_snippet``.
 
-``get_snippet`` acts like an ``{% include %}``, that loads a template
+``include_snippet`` acts like an ``{% include %}``, that loads a template
 and renders it with the current context, but the template content
 comes from database.
 
@@ -23,7 +23,7 @@ It accepts 2 parameter:
 
 Syntax::
 
-    {% get_snippet [name] ([cache]) %}
+    {% include_snippet [name] ([cache]) %}
 
 Example usage::
 
@@ -31,8 +31,8 @@ Example usage::
 
     ...
 
-    {% get_snippet "comment_list" %}
-    {% get_snippet name_in_variable 3600 %}
+    {% include_snippet "comment_list" %}
+    {% include_snippet name_in_variable 3600 %}
 
 """
 
@@ -91,6 +91,6 @@ class BasicSnippetWrapper(object):
         self.prepare(parser, token)
         return SnippetNode(self.slug, self.is_variable, self.cache_time)
 
-do_get_snippet = BasicSnippetWrapper()
+do_include_snippet = BasicSnippetWrapper()
 
-register.tag('get_snippet', do_get_snippet)
+register.tag('include_snippet', do_include_snippet)

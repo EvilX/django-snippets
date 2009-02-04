@@ -11,9 +11,9 @@ setup(
                   '{% include %}, but the template content comes from '
                   'database.',
     long_description = 'django-snippets provides a templatetag called '
-                       'get_snippet for Django projects.\n\n'
-                       'get_snippet acts as an {% include %}, that loads a '
-                       'template and renders it with the current context, '
+                       'include_snippet for Django projects.\n\n'
+                       'include_snippet acts as an {% include %}, that loads '
+                       'a template and renders it with the current context, '
                        'but the template content comes from database.',
     keywords = 'django apps template',
     license = 'New BSD License',
