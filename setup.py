@@ -7,7 +7,7 @@ from snippets import get_version
 setup(
     name = 'django-snippets',
     version = get_version(),
-    description = 'provides a templatetag for Django acting as an '
+    description = 'Provides a templatetag for Django acting as an '
                   '{% include %}, but the template content comes from '
                   'database.',
     long_description = 'django-snippets provides a templatetag called '
