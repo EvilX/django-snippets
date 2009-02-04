@@ -5,6 +5,11 @@ from django.contrib.sites.models import Site
 from django.utils.translation import ugettext_lazy as _
 
 class Snippet(models.Model):
+    """
+    Think of a Snippet as a part of a template. It's basically a piece
+    of content with a given name (slug), that can be included and
+    rendered with a template with templatetag ``include_snippet``.
+    """
     slug = models.CharField(
         _('slug'),
         max_length=255,
