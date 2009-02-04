@@ -1,8 +1,10 @@
 *.pyc
 *.bak
 *.db
-.*.swp
+*.swp
 ._*
+.#*
+*#
 README.html
 django_snippets.egg-info
 dist
