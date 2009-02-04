@@ -37,3 +37,8 @@ of seconds, the that snippet should be cached::
     
     {% get_snippet "comment_list" 3600 %}
 
+License
+-------
+
+*django-snippets* is available free software under the New BSD
+license. See the file LICENSE for more information.

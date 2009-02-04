@@ -1,3 +1,6 @@
+from ez_setup import use_setuptools
+use_setuptools()
+
 from setuptools import setup, find_packages
 from snippets import get_version
 
@@ -5,10 +8,10 @@ setup(
     name = 'django-snippets',
     version = get_version(),
     description = 'django-snippets acts like an {% include %}, that loads a '
-                  'template and renders it with the current context, but is '
-                  'editable and served dynamically from database.',
+                  'template and renders it with the current context, but '
+                  'the template content comes from database.',
     long_description = open('README.rst').read(),
-    keywords = 'django apps',
+    keywords = 'django apps template',
     license = 'New BSD License',
     author = 'Guilherme Gondim',
     author_email = 'semente@taurinus.org',
@@ -20,6 +23,7 @@ setup(
         'Framework :: Django',
         'Intended Audience :: Developers',
         'License :: OSI Approved :: BSD License',
+        'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
