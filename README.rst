@@ -35,7 +35,7 @@ can use ``{% for %}``, ``{% if %}`` and others template tags.
 This tag also accepts an optional argument where you can specify the number
 of seconds, the that snippet should be cached::
     
-    {% include_snippet6~ "comment_list" 3600 %}
+    {% include_snippet "comment_list" 3600 %}
 
 License
 -------
