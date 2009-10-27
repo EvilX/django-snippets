@@ -4,7 +4,7 @@ templatetag acting as an ``{% include %}``, but the template content
 comes from database.
 """
 
-VERSION = (0, 1, 'pre')
+VERSION = (0, 1)
 
 def get_version():
     """
