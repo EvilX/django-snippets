@@ -34,9 +34,16 @@ Example usage::
     {% include_snippet "comment_list" %}
     {% include_snippet name_in_variable 3600 %}
 
+.. note::
+
+    If you use a snippet that doesn't exist, ``include_snippet`` will insert
+    the value of the SNIPPET_STRING_IF_INVALID setting, which is '' (the empty
+    string) by default.
+
 """
 
 from django import template
+from django.conf import settings
 from django.db import models
 from django.core.cache import cache
 
@@ -62,7 +69,7 @@ class SnippetNode(template.Node):
                 try:
                     snippet = Snippet.objects.get(slug=real_slug)
                 except Snippet.DoesNotExist:
-                    return ''
+                    return getattr(settings, 'SNIPPET_STRING_IF_INVALID', '')
                 cache.set(cache_key, snippet, int(self.cache_time))
             t = template.Template(snippet.content)
             return t.render(context)
