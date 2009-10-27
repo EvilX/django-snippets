@@ -37,11 +37,9 @@ of seconds, the that snippet should be cached::
     
     {% include_snippet "comment_list" 3600 %}
 
-.. note::
-
-    If you use a snippet that doesn't exist, ``include_snippet`` will insert
-    the value of the SNIPPET_STRING_IF_INVALID setting, which is '' (the empty
-    string) by default.
+*If you use a snippet that doesn't exist, ``include_snippet`` will insert the
+value of the SNIPPET_STRING_IF_INVALID setting, which is '' (the empty string)
+by default.*
 
 License
 -------

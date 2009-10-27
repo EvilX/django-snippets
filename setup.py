@@ -22,7 +22,6 @@ setup(
     url = 'http://github.com/semente/django-snippets/',
     dependency_links = [],
     classifiers = [
-        'Development Status :: 3 - Alpha',
         'Environment :: Plugins',
         'Framework :: Django',
         'Intended Audience :: Developers',
@@ -32,6 +31,5 @@ setup(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
     packages = find_packages(),
-    include_package_data = True,
     zip_safe = False,
 )
