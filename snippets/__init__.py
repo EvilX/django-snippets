@@ -4,14 +4,14 @@ templatetag acting as an ``{% include %}``, but the template content
 comes from database.
 """
 
-VERSION = (0, 1)
+VERSION = (0, 1, 1)
 
 def get_version():
     """
     Returns the version as a human-format string.
     """
-    v = '.'.join([str(i) for i in VERSION[:-1]])
-    return '%s-%s' % (v, VERSION[-1])
+    v = '.'.join([str(i) for i in VERSION])
+    return v
 
 __author__ = 'See the file AUTHORS.txt.'
 __license__ = 'New BSD License'
