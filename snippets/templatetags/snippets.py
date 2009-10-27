@@ -61,7 +61,7 @@ class SnippetNode(template.Node):
             if snippet is None:
                 try:
                     snippet = Snippet.objects.get(slug=real_slug)
-                except Snippet.DoesNotExit:
+                except Snippet.DoesNotExist:
                     return ''
                 cache.set(cache_key, snippet, int(self.cache_time))
             t = template.Template(snippet.content)
