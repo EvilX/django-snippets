@@ -5,6 +5,7 @@
 ._*
 .#*
 *#
+MANIFEST
 README.html
 django_snippets.egg-info
 dist
