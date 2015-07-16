@@ -1,6 +1,8 @@
 django-snippets
 ===============
 
+*(django-snippets is no longer supported!)*
+
 **django-snippets** provides a templatetag acting as an ``{% include %}``,
 that loads a template and renders it with the current context, but the
 template content comes from database.
