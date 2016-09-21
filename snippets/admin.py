@@ -1,7 +1,10 @@
+# -*- coding: utf-8 -*-
+
 from django.contrib import admin
 from django.utils.html import escape
 from django.utils.translation import ugettext_lazy as _
 from snippets.models import Snippet
+
 
 class SnippetAdmin(admin.ModelAdmin):
     ordering = ['slug',]

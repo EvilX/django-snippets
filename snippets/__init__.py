@@ -17,3 +17,4 @@ __author__ = 'See the file AUTHORS.txt.'
 __license__ = 'New BSD License'
 __url__ = 'http://github.com/semente/django-snippets/'
 __version__ = get_version()
+default_app_config = 'snippets.apps.SnippetsApp'

@@ -44,13 +44,13 @@ Example usage::
 
 from django import template
 from django.conf import settings
-from django.db import models
+from snippets.models import Snippet
 from django.core.cache import cache
 
 register = template.Library()
 
-Snippet = models.get_model('snippets', 'snippet')
 CACHE_PREFIX = "snippet_"
+
 
 class SnippetNode(template.Node):
     def __init__(self, slug, is_variable, cache_time=0):
@@ -69,7 +69,7 @@ class SnippetNode(template.Node):
                 try:
                     snippet = Snippet.objects.get(slug=real_slug)
                 except Snippet.DoesNotExist:
-                    return getattr(settings, 'SNIPPET_STRING_IF_INVALID', '')
+                    return ''
                 cache.set(cache_key, snippet, int(self.cache_time))
             t = template.Template(snippet.content)
             return t.render(context)
@@ -80,8 +80,7 @@ class BasicSnippetWrapper(object):
         self.is_variable = False
         self.slug = None
         if len(tokens) < 2 or len(tokens) > 3:
-            raise template.TemplateSyntaxError, \
-                "%r tag should have either 2 or 3 arguments" % (tokens[0],)
+            raise template.TemplateSyntaxError("{0} tag should have either 2 or 3 arguments".format(tokens[0],))
         if len(tokens) == 2:
             tag_name, slug = tokens
             self.cache_time = 0

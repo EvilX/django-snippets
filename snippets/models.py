@@ -1,8 +1,11 @@
+# -*- coding: utf-8 -*-
+
 from django.conf import settings
 from django.contrib.sites.managers import CurrentSiteManager
 from django.contrib.sites.models import Site
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
+
 
 class Snippet(models.Model):
     """
@@ -26,6 +29,7 @@ class Snippet(models.Model):
         verbose_name = _('snippet')
         verbose_name_plural = _('snippets')
         ordering = ('slug',)
+        app_label = 'snippets'
 
     def __unicode__(self):
         return u'%s' % (self.slug,)
