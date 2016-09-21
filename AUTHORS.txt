@@ -7,3 +7,4 @@ Extended by
     * Kevin Fricovsky <http://blog.howiworkdaily.com/>
     * Horst Gutmann <http://zerokspot.com/>
     * Guilherme Gondim <http://semente.taurinus.org/>
+    * Leonid Nasedkin
